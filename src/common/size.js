@@ -9,5 +9,4 @@ export default class Size {
 
 
 if (typeof window.$Size === 'undefined') window.$Size = Size;
-
-console.log(window.$Size);
+ 
