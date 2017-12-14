@@ -15,7 +15,7 @@
     "redux": "3.7.2",
     "redux-thunk": "2.2.0",
     "seamless-immutable": "7.1.2",
-    "isomorphic-fetch":"2.1.1"
+    "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
     "babel-jest": "21.2.0",
