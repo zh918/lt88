@@ -6,12 +6,21 @@ import { registerScreens } from './src/routes'
 import * as configActions from './src/redux/reducers/config/actions'
 import store from './src/redux/store/configureStore'
 
+import IconHelper from './src/common/IconHelper'
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
+var iconRock = null;
+
 registerScreens(store, Provider);
 
 export default class Bootstrap {
   constructor() {
-    store.subscribe(this.onStoreUpdate.bind(this));
-    store.dispatch(configActions.configLoad());
+    FontAwesome.getImageSource('rocket', 30).then((source) => { iconRock = source}).then(result=>{
+      store.subscribe(this.onStoreUpdate.bind(this));
+      store.dispatch(configActions.configLoad());  
+    });
+    // store.subscribe(this.onStoreUpdate.bind(this));
+    // store.dispatch(configActions.configLoad());
+
   }
 
   onStoreUpdate() {
@@ -58,19 +67,20 @@ export default class Bootstrap {
 
         Navigation.startTabBasedApp({
         tabs: [
-          {
-            label: 'One',
-            screen: 'lt.home',
-            title: 'Screen One',
-
-          },
-          {
-            label: 'Two',
-            screen: 'lt.login', 
-            title: 'Screen Two'
-          }
-        ]
-      });
+            {
+              label: 'One',
+              screen: 'lt.home',
+              title: 'Screen One',
+              icon: iconRock
+            },
+            {
+              label: 'Two',
+              screen: 'lt.login',
+              title: 'Screen Two',
+              icon: iconRock
+            }
+          ]
+        });
 
 
     }
