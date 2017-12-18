@@ -14,13 +14,24 @@ registerScreens(store, Provider);
 
 export default class Bootstrap {
   constructor() {
-    FontAwesome.getImageSource('rocket', 30).then((source) => { iconRock = source}).then(result=>{
-      store.subscribe(this.onStoreUpdate.bind(this));
-      store.dispatch(configActions.configLoad());  
-    });
+    // FontAwesome.getImageSource('rocket', 30).then((source) => { iconRock = source}).then(result=>{
+    //   store.subscribe(this.onStoreUpdate.bind(this));
+    //   store.dispatch(configActions.configLoad());
+    // });
+
     // store.subscribe(this.onStoreUpdate.bind(this));
     // store.dispatch(configActions.configLoad());
 
+    this.iconMap = new Map();
+    IconHelper.getIcons([
+      {type:'FontAwesome',name:'rocket',size:30},
+      {type:'FontAwesome',name:'home',size:30}
+    ]).then(result=> {
+      this.iconMap = result;
+
+      store.subscribe(this.onStoreUpdate.bind(this));
+      store.dispatch(configActions.configLoad());
+    });
   }
 
   onStoreUpdate() {
@@ -51,19 +62,6 @@ export default class Bootstrap {
         console.log('引导动画');
         break;
       default:
-        console.log('直接抵达根目录');
-        // Navigation.startSingleScreenApp({
-        //   screen: {
-        //     screen: 'lt.home'
-        //   },
-        //   passProps: {
-        //     name:'stephen',
-        //     num: 1234,
-        //     cb: function() {
-        //       return 'Hello from a function!';
-        //     }
-        //   }
-        // });
 
         Navigation.startTabBasedApp({
         tabs: [
@@ -71,25 +69,25 @@ export default class Bootstrap {
               label: 'One',
               screen: 'lt.home',
               title: 'Screen One',
-              icon: iconRock
+              icon: this.iconMap.get('rocket')
             },
             {
               label: 'Two',
               screen: 'lt.login',
               title: 'Screen Two',
-              icon: iconRock
+              icon: this.iconMap.get('home')
             },
             {
               label: 'three',
               screen: 'lt.home',
               title: 'Screen One',
-              icon: iconRock
+              icon: this.iconMap.get('rocket')
             },
             {
               label: 'four',
               screen: 'lt.login',
               title: 'Screen Two',
-              icon: iconRock
+              icon: this.iconMap.get('home')
             }
           ],
           tabStyle:{
