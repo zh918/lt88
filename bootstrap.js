@@ -43,18 +43,36 @@ export default class Bootstrap {
         break;
       default:
         console.log('直接抵达根目录');
-        Navigation.startSingleScreenApp({
-          screen: {
-            screen: 'lt.home'
+        // Navigation.startSingleScreenApp({
+        //   screen: {
+        //     screen: 'lt.home'
+        //   },
+        //   passProps: {
+        //     name:'stephen',
+        //     num: 1234,
+        //     cb: function() {
+        //       return 'Hello from a function!';
+        //     }
+        //   }
+        // });
+
+        Navigation.startTabBasedApp({
+        tabs: [
+          {
+            label: 'One',
+            screen: 'lt.home',
+            title: 'Screen One',
+
           },
-          passProps: {
-            name:'stephen',
-            num: 1234,
-            cb: function() {
-              return 'Hello from a function!';
-            }
+          {
+            label: 'Two',
+            screen: 'lt.login', 
+            title: 'Screen Two'
           }
-        });
+        ]
+      });
+
+
     }
   }
 }
