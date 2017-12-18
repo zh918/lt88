@@ -78,8 +78,31 @@ export default class Bootstrap {
               screen: 'lt.login',
               title: 'Screen Two',
               icon: iconRock
+            },
+            {
+              label: 'three',
+              screen: 'lt.home',
+              title: 'Screen One',
+              icon: iconRock
+            },
+            {
+              label: 'four',
+              screen: 'lt.login',
+              title: 'Screen Two',
+              icon: iconRock
             }
-          ]
+          ],
+          tabStyle:{
+            navBarHidden:true
+          },
+          appStyle:{
+            forceTitlesDisplay:true,
+            tabBarTranslucent:true,
+            tabBarBackgroundColor:'#0f2362',
+            tabBarButtonColor:'#fff',
+            tabBarSelectedButtonColor:'blue',
+            tabBarLabelColor:'red'
+          }
         });
 
 
