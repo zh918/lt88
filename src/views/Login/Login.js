@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Text, TextInput, View, Image,TouchableHighlight,TouchableOpacity } from 'react-native'
 import Styles from '../../styles/login.style'
+import Toast from '../../components/Toast';
 
 class Login extends Component {
     constructor(props) {
@@ -121,10 +122,13 @@ class Login extends Component {
     _handleSubmit() {
       console.log('提交数据',this.state);
       this.props.actions();
-      this.props.navigator.push({
-        screen: 'lt.home',
-        title: '首页'
-      });
+
+      Toast.show('登录消息提醒时候hi撒旦法师打发可视对讲反馈卡时代峻峰了深刻的缴费乐山大佛');
+
+      // this.props.navigator.push({
+      //   screen: 'lt.home',
+      //   title: '首页'
+      // });
     }
 }
 

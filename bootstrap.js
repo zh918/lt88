@@ -7,25 +7,17 @@ import * as configActions from './src/redux/reducers/config/actions'
 import store from './src/redux/store/configureStore'
 
 import IconHelper from './src/common/IconHelper'
-import FontAwesome from 'react-native-vector-icons/FontAwesome'
-var iconRock = null;
+import FontAwesome from 'react-native-vector-icons/FontAwesome' 
 
 registerScreens(store, Provider);
 
 export default class Bootstrap {
   constructor() {
-    // FontAwesome.getImageSource('rocket', 30).then((source) => { iconRock = source}).then(result=>{
-    //   store.subscribe(this.onStoreUpdate.bind(this));
-    //   store.dispatch(configActions.configLoad());
-    // });
-
-    // store.subscribe(this.onStoreUpdate.bind(this));
-    // store.dispatch(configActions.configLoad());
-
     this.iconMap = new Map();
     IconHelper.getIcons([
       {type:'FontAwesome',name:'rocket',size:30},
-      {type:'FontAwesome',name:'home',size:30}
+      {type:'FontAwesome',name:'home',size:30},
+      {type:'FontAwesome',name:'windows',size:25}
     ]).then(result=> {
       this.iconMap = result;
 
@@ -87,7 +79,7 @@ export default class Bootstrap {
               label: 'four',
               screen: 'lt.login',
               title: 'Screen Two',
-              icon: this.iconMap.get('home')
+              icon: this.iconMap.get('windows')
             }
           ],
           tabStyle:{

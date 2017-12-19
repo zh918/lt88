@@ -4,6 +4,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
 export default class IconHelper {
     /**
+     * 批量载入icon图标
      * iconArray:[{type:'FontAwesome',name:'rocker',size:30}]
      */
     static getIcons(iconArray) {

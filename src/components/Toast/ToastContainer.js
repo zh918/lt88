@@ -43,7 +43,7 @@ let styles = StyleSheet.create({
     },
     containerStyle: {
         padding: 10,
-        backgroundColor: '#000',
+        backgroundColor: 'red',//'#000',
         opacity: 0.8,
         borderRadius: 5,
         marginHorizontal: WINDOW_WIDTH * ((1 - TOAST_MAX_WIDTH) / 2)
@@ -60,7 +60,7 @@ let styles = StyleSheet.create({
     },
     textStyle: {
         fontSize: 16,
-        color: '#fff',
+        color: 'yellow', //'#fff',
         textAlign: 'center'
     }
 });
@@ -94,7 +94,7 @@ class ToastContainer extends Component {
         duration: durations.SHORT,
         animation: true,
         shadow: true,
-        position: positions.BOTTOM,
+        position: positions.CENTER,
         opacity: 0.8,
         delay: 0,
         hideOnPress: true
