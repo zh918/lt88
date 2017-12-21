@@ -7,7 +7,7 @@ import * as configActions from './src/redux/reducers/config/actions'
 import store from './src/redux/store/configureStore'
 
 import IconHelper from './src/common/IconHelper'
-import FontAwesome from 'react-native-vector-icons/FontAwesome' 
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
 registerScreens(store, Provider);
 
@@ -17,7 +17,7 @@ export default class Bootstrap {
     IconHelper.getIcons([
       {type:'FontAwesome',name:'rocket',size:30},
       {type:'FontAwesome',name:'home',size:30},
-      {type:'FontAwesome',name:'windows',size:25}
+      {type:'FontAwesome',name:'windows',size:30}
     ]).then(result=> {
       this.iconMap = result;
 
@@ -76,9 +76,8 @@ export default class Bootstrap {
               icon: this.iconMap.get('rocket')
             },
             {
-              label: 'four',
-              screen: 'lt.login',
-              title: 'Screen Two',
+              label: '个人中心',
+              screen: 'lt.member.center',
               icon: this.iconMap.get('windows')
             }
           ],
