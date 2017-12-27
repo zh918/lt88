@@ -3,8 +3,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Text, TextInput, View, Image,TouchableHighlight,TouchableOpacity } from 'react-native'
 import Styles from '../../styles/member.center.style'
+import Base from '../Base'
 
-class Center extends Component {
+class Center extends Base {
     constructor(parms) {
       super(parms);
 
