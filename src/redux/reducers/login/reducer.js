@@ -2,15 +2,16 @@ import * as types from './actionTypes';
 import Immutable from 'seamless-immutable';
 
 const initialState = Immutable({
-  root: '' // 'login' / 'after-login'
+  root: '', // 'login' / 'after-login'
+  isLogin:false
 });
 
-export default function login(state = initialState, action = {}) { 
+export default function login(state = initialState, action = {}) {
   switch (action.type) {
     case types.LOGIN:
           console.log('登录触发');
           return state.merge({
-            root:'login'
+            isLogin:true
           });
       break;
     case types.LOGIN_OUT:

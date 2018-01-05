@@ -3,12 +3,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Text, TextInput, View, Image,TouchableHighlight,TouchableOpacity } from 'react-native'
 import Styles from '../../styles/member.center.style'
-import Base from '../Base'
+import Auth from '../Base/Auth'
 
-class Center extends Base {
-    constructor(parms) {
-      super(parms);
-
+class Center extends Auth {
+    constructor(props) {
+      super(props);
+      console.log('center===========',props)
     }
 
     render() {
@@ -43,11 +43,17 @@ class Center extends Base {
 
             </View>
             <View style={Styles.menus}>
-
+              <TouchableOpacity onPress={this._pushToAbout.bind(this)}>
+                <Text>测试子项权限校验问题</Text>
+              </TouchableOpacity>
             </View>
 
           </View>
       );
+    }
+
+    _pushToAbout() {
+      this.props.navigator.push({screen: 'lt.member.about'});
     }
 
 
@@ -58,7 +64,9 @@ Center.navigatorStyle = {
 }
 
 const mapStateToProps = (state, props) => {
-  return {}
+  return {
+    login:state.login
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {

@@ -16,28 +16,23 @@ export default{
       ]).then(result=> {
           _this.iconMap = result;
           let menusArray = [
-            {
-                label: '我的',
-                screen: 'lt.user',
-                title: 'Screen Two',
-                icon: _this.iconMap.get('user')
-            },
+
             {
                 label: 'One2',
                 screen: 'lt.home',
                 title: 'Screen One',
-                icon: _this.iconMap.get('flame')
+                icon: _this.iconMap.get('home')
             },{
                 label: 'Two',
-                screen: 'lt.login',
+                screen: 'lt.home',
                 title: 'Screen Two',
                 icon: _this.iconMap.get('home')
             },
             {
-                label: 'three',
-                screen: 'lt.home',
+                label: '我的',
+                screen: 'lt.member.center',
                 title: 'Screen One',
-                icon: _this.iconMap.get('octoface')
+                icon: _this.iconMap.get('home')
             }
           ];
           resolve(menusArray);
@@ -50,10 +45,10 @@ export default{
   appStyle:{
       forceTitlesDisplay:true,
       tabBarTranslucent:true,
-      tabBarBackgroundColor:'#0f2362',
-      tabBarButtonColor:'#fff',
-      tabBarSelectedButtonColor:'blue',
-      tabBarLabelColor:'red'
+      // tabBarBackgroundColor:'#0f2362',
+      // tabBarButtonColor:'#fff',
+      // tabBarSelectedButtonColor:'blue',
+      // tabBarLabelColor:'red'
   }
 
 }

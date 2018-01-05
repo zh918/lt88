@@ -1,9 +1,13 @@
 // 登录
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import {Navigation} from 'react-native-navigation'
 import { Text, TextInput, View, Image,TouchableHighlight,TouchableOpacity } from 'react-native'
 import Styles from '../../styles/login.style'
 import Toast from '../../components/Toast';
+import Menus from '../../menus'
+
+import actions from '../../redux/reducers/actions'
 
 class Login extends Component {
     constructor(props) {
@@ -15,7 +19,9 @@ class Login extends Component {
         second:60
       };
       this.intervalId = null;
-      console.log('传入数据', props,this.state);
+      Menus.initTabs().then((result)=>{
+        this.tabsMenus = result;
+      })
     }
 
     componentDidMount() {
@@ -121,14 +127,14 @@ class Login extends Component {
 
     _handleSubmit() {
       console.log('提交数据',this.state);
-      this.props.actions();
+      this.props.submit().then(result=>{
+        Navigation.startTabBasedApp({
+          tabs: this.tabsMenus,
+          tabStyle: Menus.tabStyle,
+          appStyle: Menus.appStyle
+        });
+      })
 
-      Toast.show('登录消息提醒时候hi撒旦法师打发可视对讲反馈卡时代峻峰了深刻的缴费乐山大佛');
-
-      // this.props.navigator.push({
-      //   screen: 'lt.home',
-      //   title: '首页'
-      // });
     }
 }
 
@@ -144,8 +150,8 @@ const mapStateToProps = (state,props) => {
 const mapDispatchToProps = (dispatch) => {
   console.log('dispatch',dispatch);
   return {
-    actions:function(){
-      console.log('mapDispatchToProps hello');
+    submit:function(){
+      return Promise.resolve(dispatch(actions.loginAction.login()));
     }
   }
 }
