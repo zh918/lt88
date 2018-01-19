@@ -10,12 +10,14 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
 import LayoutDefault from '../../layouts/LayoutDefault'
 
+import Base from '../Base'
+
 const instructions = Platform.select({
   ios: '这是ios平台',
   android: '这是android平台'
 });
 
-export default class Home extends Component<{}> {
+export default class Home extends Base {
   render() {
     return (
       <LayoutDefault>

@@ -30,7 +30,7 @@ export default{
             },
             {
                 label: '我的',
-                screen: 'lt.member.center',
+                screen: 'lt.member.about',
                 title: 'Screen One',
                 icon: _this.iconMap.get('home')
             }

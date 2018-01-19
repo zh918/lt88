@@ -97,8 +97,11 @@ export default Styles = StyleSheet.create({
     flexDirection:'column',
     marginTop:$Size.toDp(30),
     backgroundColor:'#252932'
+  },
+  btn_router:{
+    position:'absolute',
+    marginTop:$Size.toDp(300),
   }
-
 
 
 });
