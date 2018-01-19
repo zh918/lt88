@@ -6,11 +6,18 @@ import {Navigation} from 'react-native-navigation'
 import Toast from '../../components/Toast'
 import Base from '../Base'
 
+import RCTDeviceEventEmitter from 'RCTDeviceEventEmitter'
+
 class WbView extends Base {
     constructor(props) {
       super(props);
       this.wb = null;
       this.timeoutId = null;
+    }
+
+    componentDidMount() {
+      debugger
+      console.log('componentDidMount',RCTDeviceEventEmitter);
     }
 
     render() {
@@ -20,41 +27,10 @@ class WbView extends Base {
               <WebView
                 ref={wb=>{this.wb = wb;}}
                 style={Styles.webview}
-                onLoadEnd={this._onLoad.bind(this)}
                 source={{uri: this.props.source.url}}/>
             </ScrollView>
           </View>
       );
-    }
-
-    _onLoad() {
-      let _this = this;
-
-
-      // _this.timeoutId = setTimeout(function () {
-      //
-      //   _this.wb.injectJavaScript = ()=>{
-      //     // eval(`$jsc.emit("onCreated",${info})`);
-      //     // $jsc.emit("onCreated",info);
-      //     alert(134)
-      //   };
-      // }, 2*1000);
-
-      // _this.wb.injectedJavaScript = "alert(1)"
-
-        // _this.wb.injectJavaScript = function() {
-        //   debugger
-        //   alert(1)
-        // }
-
-
-
-        _this.timeoutId = setTimeout(function () {
-
-          _this.wb.injectJavaScript = _this._cbInject();
-
-        }, 2*1000);
-        // _this.wb.injectJavaScript = _this._cbInject();
     }
 
     _cbInject() {
