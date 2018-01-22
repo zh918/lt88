@@ -46,10 +46,12 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8A74FC055EBB4E229612B16E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14184157750F4973951BD477 /* EvilIcons.ttf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		DC399E0020158A0000579A76 /* RCTCustomWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC399DFF20158A0000579A76 /* RCTCustomWebView.m */; };
+		DC399E0320158AAD00579A76 /* RCTCustomWebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC399E0220158AAD00579A76 /* RCTCustomWebViewManager.m */; };
 		DC4B32FC4C6643B694052178 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54AAF092C6274206BAAD9873 /* libRNVectorIcons.a */; };
 		DC61037E201046E800A6D700 /* jsc.js in Resources */ = {isa = PBXBuildFile; fileRef = DC61037D201046E800A6D700 /* jsc.js */; };
 		DC61037F201046EC00A6D700 /* jsc.js in Resources */ = {isa = PBXBuildFile; fileRef = DC61037D201046E800A6D700 /* jsc.js */; };
-		DC857E362011F8D3008B26D2 /* JscModules.m in Sources */ = {isa = PBXBuildFile; fileRef = DC857E352011F8D3008B26D2 /* JscModules.m */; };
+		DC857E392011FA9C008B26D2 /* JscModules.m in Sources */ = {isa = PBXBuildFile; fileRef = DC857E382011FA9C008B26D2 /* JscModules.m */; };
 		E0D29C3472C24D9CAC5E6D92 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6165470B29AC49619B72CE19 /* Zocial.ttf */; };
 		EDB49F027921465EA2A5B926 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9C9F49AF85549789B95170B /* SimpleLineIcons.ttf */; };
 		F7572B81BB1245DBA54F5E01 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 284601944D84425F9A6A14CA /* MaterialIcons.ttf */; };
@@ -367,9 +369,14 @@
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		B9E62FF90AB9469999B846B7 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		D0B1BB630A8C413E9C8140E7 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		DC399DFC2015897600579A76 /* RCTWebView+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTWebView+Custom.h"; sourceTree = "<group>"; };
+		DC399DFE201589D200579A76 /* RCTCustomWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTCustomWebView.h; sourceTree = "<group>"; };
+		DC399DFF20158A0000579A76 /* RCTCustomWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTCustomWebView.m; sourceTree = "<group>"; };
+		DC399E0120158A8A00579A76 /* RCTCustomWebViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTCustomWebViewManager.h; sourceTree = "<group>"; };
+		DC399E0220158AAD00579A76 /* RCTCustomWebViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTCustomWebViewManager.m; sourceTree = "<group>"; };
 		DC61037D201046E800A6D700 /* jsc.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jsc.js; sourceTree = "<group>"; };
-		DC857E342011F86B008B26D2 /* JscModules.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JscModules.h; sourceTree = "<group>"; };
-		DC857E352011F8D3008B26D2 /* JscModules.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JscModules.m; sourceTree = "<group>"; };
+		DC857E372011FA9C008B26D2 /* JscModules.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JscModules.h; sourceTree = "<group>"; };
+		DC857E382011FA9C008B26D2 /* JscModules.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JscModules.m; sourceTree = "<group>"; };
 		E11AF8FC7FF84F6F8020E92C /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		EA7F916DFF4A4608B96D7988 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		EF1D340A5D894E7BA4269FB4 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
@@ -515,6 +522,7 @@
 		13B07FAE1A68108700A75B9A /* lt88 */ = {
 			isa = PBXGroup;
 			children = (
+				DC399DFB2015891500579A76 /* Components */,
 				DC857E332011F808008B26D2 /* modules */,
 				DC61037D201046E800A6D700 /* jsc.js */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -650,6 +658,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DC399DFB2015891500579A76 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DC399DFD201589BB00579A76 /* WebView */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		DC399DFD201589BB00579A76 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				DC399DFC2015897600579A76 /* RCTWebView+Custom.h */,
+				DC399DFE201589D200579A76 /* RCTCustomWebView.h */,
+				DC399DFF20158A0000579A76 /* RCTCustomWebView.m */,
+				DC399E0120158A8A00579A76 /* RCTCustomWebViewManager.h */,
+				DC399E0220158AAD00579A76 /* RCTCustomWebViewManager.m */,
+			);
+			name = WebView;
+			sourceTree = "<group>";
+		};
 		DC783B821FDFAC6700E2F378 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -678,8 +706,8 @@
 		DC857E332011F808008B26D2 /* modules */ = {
 			isa = PBXGroup;
 			children = (
-				DC857E342011F86B008B26D2 /* JscModules.h */,
-				DC857E352011F8D3008B26D2 /* JscModules.m */,
+				DC857E372011FA9C008B26D2 /* JscModules.h */,
+				DC857E382011FA9C008B26D2 /* JscModules.m */,
 			);
 			name = modules;
 			sourceTree = "<group>";
@@ -1216,7 +1244,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				DC857E362011F8D3008B26D2 /* JscModules.m in Sources */,
+				DC399E0320158AAD00579A76 /* RCTCustomWebViewManager.m in Sources */,
+				DC857E392011FA9C008B26D2 /* JscModules.m in Sources */,
+				DC399E0020158A0000579A76 /* RCTCustomWebView.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
