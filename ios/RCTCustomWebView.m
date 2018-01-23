@@ -12,8 +12,10 @@
 #import <React/RCTBridgeDelegate.h>
 #import <React/RCTBridgeModule.h>
 #import <React/RCTBridge.h>
+#import <React/RCTBundleURLProvider.h>
 
-#import <JavascriptCore/JavaScriptCore.h> 
+#import <JavascriptCore/JavaScriptCore.h>
+#import "RNNotification.h"
 
 @interface RCTCustomWebView ()
 
@@ -49,25 +51,12 @@
     NSString *test = @"$jsc.back(88)";
     [self execJS:test];
     
-    NSString *msg = @"原生组件消息；通过web来触发拉起";
-    UIAlertView * alertView=[[UIAlertView alloc] initWithTitle:@"web触发native消息" message:msg delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
-    [alertView show];
+//    NSString *msg = @"原生组件消息；通过web来触发拉起";
+//    UIAlertView * alertView=[[UIAlertView alloc] initWithTitle:@"web触发native消息" message:msg delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
+//    [alertView show];
     
-    // 这里将直接调用rn订阅的js事件。即native=》rn
-    RCTBridge *_bridge = [[RCTBridge alloc] init];
-  
-    NSNumber *reactTag = [NSNumber numberWithInteger:1];
-    //    [_bridge.eventDispatcher sendTextEventWithType:(RCTTextEventTypeSubmit) reactTag:reactTag text:@"rntest" key:@"rntest" eventCount:1];
-    //
-    
-//    [_bridge enqueueJSCall:@"RCTDeviceEventEmitter"
-//                    method:@"emit"
-//                      args:@[@"rntest"]
-//                completion:NULL];
-//
-   JSContext *context = [_webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-//    RCTBridge *_bridge = [context.currentContext _bridge]; 这里存在问题，如何获取当前_bridge是关键了。
-    
+    RNNotification *notification = [RNNotification allocWithZone: nil];
+    [notification sendNotificationToReactNative];
     return NO;
   }
   

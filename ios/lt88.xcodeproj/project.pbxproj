@@ -51,7 +51,7 @@
 		DC4B32FC4C6643B694052178 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54AAF092C6274206BAAD9873 /* libRNVectorIcons.a */; };
 		DC61037E201046E800A6D700 /* jsc.js in Resources */ = {isa = PBXBuildFile; fileRef = DC61037D201046E800A6D700 /* jsc.js */; };
 		DC61037F201046EC00A6D700 /* jsc.js in Resources */ = {isa = PBXBuildFile; fileRef = DC61037D201046E800A6D700 /* jsc.js */; };
-		DC857E392011FA9C008B26D2 /* JscModules.m in Sources */ = {isa = PBXBuildFile; fileRef = DC857E382011FA9C008B26D2 /* JscModules.m */; };
+		DC92C11B2016D89300CC766C /* RNNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = DC92C11A2016D89300CC766C /* RNNotification.m */; };
 		E0D29C3472C24D9CAC5E6D92 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6165470B29AC49619B72CE19 /* Zocial.ttf */; };
 		EDB49F027921465EA2A5B926 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9C9F49AF85549789B95170B /* SimpleLineIcons.ttf */; };
 		F7572B81BB1245DBA54F5E01 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 284601944D84425F9A6A14CA /* MaterialIcons.ttf */; };
@@ -375,8 +375,8 @@
 		DC399E0120158A8A00579A76 /* RCTCustomWebViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTCustomWebViewManager.h; sourceTree = "<group>"; };
 		DC399E0220158AAD00579A76 /* RCTCustomWebViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTCustomWebViewManager.m; sourceTree = "<group>"; };
 		DC61037D201046E800A6D700 /* jsc.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jsc.js; sourceTree = "<group>"; };
-		DC857E372011FA9C008B26D2 /* JscModules.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JscModules.h; sourceTree = "<group>"; };
-		DC857E382011FA9C008B26D2 /* JscModules.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JscModules.m; sourceTree = "<group>"; };
+		DC92C0F42016D88300CC766C /* RNNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNNotification.h; sourceTree = "<group>"; };
+		DC92C11A2016D89300CC766C /* RNNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNNotification.m; sourceTree = "<group>"; };
 		E11AF8FC7FF84F6F8020E92C /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		EA7F916DFF4A4608B96D7988 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		EF1D340A5D894E7BA4269FB4 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
@@ -706,8 +706,8 @@
 		DC857E332011F808008B26D2 /* modules */ = {
 			isa = PBXGroup;
 			children = (
-				DC857E372011FA9C008B26D2 /* JscModules.h */,
-				DC857E382011FA9C008B26D2 /* JscModules.m */,
+				DC92C0F42016D88300CC766C /* RNNotification.h */,
+				DC92C11A2016D89300CC766C /* RNNotification.m */,
 			);
 			name = modules;
 			sourceTree = "<group>";
@@ -1245,8 +1245,8 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				DC399E0320158AAD00579A76 /* RCTCustomWebViewManager.m in Sources */,
-				DC857E392011FA9C008B26D2 /* JscModules.m in Sources */,
 				DC399E0020158A0000579A76 /* RCTCustomWebView.m in Sources */,
+				DC92C11B2016D89300CC766C /* RNNotification.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
