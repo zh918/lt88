@@ -5,7 +5,7 @@ export default Styles = StyleSheet.create({
     flex:1,
     width:$Size.toDp(750),
     height:$Size.toDp(1334),
-    backgroundColor:'#1c1a21'
+    backgroundColor:'#fff'
   },
   container_scroll:{
     width:$Size.toDp(750),
@@ -14,6 +14,7 @@ export default Styles = StyleSheet.create({
   webview:{
     width:$Size.toDp(750),
     height:$Size.toDp(1334),
+    overflow:'scroll',
   }
 
 

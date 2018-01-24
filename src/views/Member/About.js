@@ -18,7 +18,7 @@ class About extends Base {
           <View style={Styles.container}>
             <Text>hello member</Text>
             <TouchableOpacity style={Styles.btn_router} onPress={this._jumpToWeb.bind(this)}>
-              <Text>跳转到网页</Text>
+              <Text style={Styles.btn_router_text}>跳转到网页</Text>
             </TouchableOpacity>
           </View>
       );

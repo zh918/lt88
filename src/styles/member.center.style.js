@@ -101,6 +101,9 @@ export default Styles = StyleSheet.create({
   btn_router:{
     position:'absolute',
     marginTop:$Size.toDp(300),
+  },
+  btn_router_text:{
+    color:'#fff'
   }
 
 

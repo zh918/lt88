@@ -8,7 +8,7 @@ export default class CustomWebView extends Component {
   }
 
   static propTypes = {
-      ...WebView.propTypes,
+      ...WebView.propTypes, 
   };
 
   render() {
@@ -29,10 +29,10 @@ export default class CustomWebView extends Component {
 
 }
 
-// const RCTCustomWebView = requireNativeComponent(
-//   'RCTCustomWebView',
-//   CustomWebView,
-//   WebView.extraNativeComponentConfig
-// );
+const RCTCustomWebView = requireNativeComponent(
+  'RCTCustomWebView',
+  CustomWebView,
+  WebView.extraNativeComponentConfig
+);
 
-const RCTCustomWebView = requireNativeComponent('RCTCustomWebView', CustomWebView);
+// const RCTCustomWebView = requireNativeComponent('RCTCustomWebView', CustomWebView);
