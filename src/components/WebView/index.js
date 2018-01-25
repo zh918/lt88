@@ -8,7 +8,7 @@ export default class CustomWebView extends Component {
   }
 
   static propTypes = {
-      ...WebView.propTypes,
+      ...WebView.propTypes, 
   };
 
   render() {

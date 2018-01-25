@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Text, TextInput, View, ScrollView,WebView,TouchableOpacity,NativeModules,NativeEventEmitter} from 'react-native'
+import { Text, TextInput, View, ScrollView,WebView,TouchableOpacity,NativeModules,NativeEventEmitter,DeviceEventEmitter} from 'react-native'
 import Styles from '../../styles/web.webview.style'
 import {Navigation} from 'react-native-navigation'
 import Toast from '../../components/Toast'
@@ -22,10 +22,18 @@ class WbView extends Base {
     componentWillMount() {
       let _this = this;
       // 2:第二步 添加监听事件，便于native触发listener事件
-      jscEventEmit.addListener('rntest',function(info){
-        // _this.props.navigator.pop({animated: true,animationType: 'fade'});
+      // ios
+      // jscEventEmit.addListener('rntest',function(info){
+      //   // _this.props.navigator.pop({animated: true,animationType: 'fade'});
+      //   Navigation.startSingleScreenApp({screen: {screen: 'lt.login'}});
+      // });
+
+      // android
+      DeviceEventEmitter.addListener('rntest',function(info){
+        // alert('rntest' + info)
         Navigation.startSingleScreenApp({screen: {screen: 'lt.login'}});
-      })
+      });
+
     }
 
     componentDidMount() {
