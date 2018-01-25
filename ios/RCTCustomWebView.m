@@ -40,6 +40,17 @@
   return self;
 }
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+  // by stephen 2018/1/19 主要为了衔接webview，打通交互能力
+  // 1.触发RNJSBridgeReady，表示页面已经准备好，可以进一步注入相关数据
+  NSString *readyJs = @"var event = new Event('RNJSBridgeReady');document.dispatchEvent(event);";
+  [self execJS:readyJs];
+  
+  // 2.执行onCreate，onResume页面订阅事件，注入相关数据
+  [self emit:@"onCreate" eventData:@"这是create监听触发"];
+  [self emit:@"onResume" eventData:@"这是resume监听触发"];
+}
+
 - (BOOL)webView:(__unused UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType
 {
@@ -94,6 +105,12 @@
       
     });
   }
+}
+
+// 触发页面订阅的事件
+-(void)emit:(NSString*)eventName eventData:(NSString*)eventData {
+  NSString *eventJs = [NSString stringWithFormat:@"$jsc.emit('%@','%@')",eventName, eventData];
+  [self execJS:eventJs];
 }
 
 @end

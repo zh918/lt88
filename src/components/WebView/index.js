@@ -29,10 +29,10 @@ export default class CustomWebView extends Component {
 
 }
 
-// const RCTCustomWebView = requireNativeComponent(
-//   'RCTCustomWebView',
-//   CustomWebView,
-//   WebView.extraNativeComponentConfig
-// );
+const RCTCustomWebView = requireNativeComponent(
+  'RCTCustomWebView',
+  CustomWebView,
+  WebView.extraNativeComponentConfig
+);
 
-const RCTCustomWebView = requireNativeComponent('RCTCustomWebView', CustomWebView);
+// const RCTCustomWebView = requireNativeComponent('RCTCustomWebView', CustomWebView);
