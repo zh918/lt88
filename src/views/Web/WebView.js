@@ -10,33 +10,24 @@ import CustomWebView from '../../components/WebView'
 // 1:第一步 引用native包
 const notificationModules = NativeModules.RNNotification;
 const jscEventEmit = new NativeEventEmitter(notificationModules);
-const customEventEmit = (Platform.OS === 'ios') ? jscEventEmit : DeviceEventEmitter;
+// const customEventEmit = (Platform.OS === 'ios') ? jscEventEmit : DeviceEventEmitter;
 
 class WbView extends Base {
     constructor(props) {
       super(props);
       this.wb = null;
-      this.timeoutId = null;
+      this.customEventEmit = (Platform.OS === 'ios') ? jscEventEmit : DeviceEventEmitter;
     }
 
     componentWillMount() {
       let _this = this;
-      // 2:第二步 添加监听事件，便于native触发listener事件
-      // ios
-      // jscEventEmit.addListener('rntest',function(info){
-      //   // _this.props.navigator.pop({animated: true,animationType: 'fade'});
-      //   Navigation.startSingleScreenApp({screen: {screen: 'lt.login'}});
-      // });
-
-      // android
-      // DeviceEventEmitter.addListener('rntest',function(info){
-      //   // alert('rntest' + info)
-      //   Navigation.startSingleScreenApp({screen: {screen: 'lt.login'}});
-      // });
-
-      customEventEmit.addListener('rntest',function(info){
-        _this.props.navigation.navigate('ProductDetails');
-      });
+      let len = !_this.customEventEmit._subscriber._subscriptionsForType.rntest ? 0 : _this.customEventEmit._subscriber._subscriptionsForType.rntest.length
+      console.log('========>',len);
+      if (len == 0) {
+        _this.customEventEmit.addListener('rntest',function(info){
+          _this.props.navigation.navigate('ProductDetails');
+        });
+      }
     }
 
     componentDidMount() {
@@ -44,7 +35,7 @@ class WbView extends Base {
     }
 
     componentWillUnmount() {
-      customEventEmit.removeListeners(1);
+      alert('componentWillUnmount')
     }
 
     render() {
