@@ -55,29 +55,25 @@ public class CustomWebViewManager extends ReactWebViewManager {
                 jscStr = out.toString();
 
             } catch (Exception e) {
-                String errScript = "alert('jsc注入时发送错误');";
-                WebViewHelper.execJs(errScript,webView);
+
             } finally {
                 if (in != null) {
                     try {
                         in.close();
                     } catch (Exception e) {
-                        String errScript = "alert('jsc注入时发送错误1');";
-                        WebViewHelper.execJs(errScript,webView);
+
                     }
                 }
                 if (out != null) {
                     try {
                         out.close();
                     } catch (Exception e) {
-                        String errScript = "alert('jsc注入时发送错误2');";
-                        WebViewHelper.execJs(errScript,webView);
                     }
                 }
             }
 
-//          String script = ";(function(window){window.$jsc = { _events:[],on:function(eventName, func) {$jsc._events.push({name:eventName,cb:func});},emit:function(eventName,args) {var eventModel = $jsc._events.find(e=>e.name == eventName);if (eventModel) eventModel.cb(args);},native: {exec:function(apiName,args){var request = 'jsc://exit.app';document.location = request;}},back:function(msg) {alert(msg)}};})(window);";
             WebViewHelper.execJs(jscStr,webView);
+
 
         }
 
@@ -86,13 +82,13 @@ public class CustomWebViewManager extends ReactWebViewManager {
         public void onPageFinished(WebView webView, String url){
             super.onPageFinished(webView, url);
 
-            String scriptBridgeReady = "var event = new Event('RNJSBridgeReady');document.dispatchEvent(event);";
+            String scriptBridgeReady = "var event = new Event('RNJSBridgeReady');document.dispatchEvent(event);setTimeout(function(){$jsc.emit('onCreate','这是触发oncreate');$jsc.emit('onResume','这是触发onresume');},100);";
             WebViewHelper.execJs(scriptBridgeReady,webView);
 
-            String scriptOnCreate = "$jsc.emit('onCreate');";
-            String scriptOnResume = "$jsc.emit('onResume');";
-            WebViewHelper.execJs(scriptOnCreate,webView);
-            WebViewHelper.execJs(scriptOnResume,webView);
+
+
+
+
         }
 
         @Override
