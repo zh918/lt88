@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Text, TextInput, View, ScrollView,WebView,TouchableOpacity,NativeModules,NativeEventEmitter,DeviceEventEmitter} from 'react-native'
+import { Text, TextInput, View, ScrollView,WebView,TouchableOpacity,NativeModules,NativeEventEmitter,DeviceEventEmitter,Platform} from 'react-native'
 import Styles from '../../styles/web.webview.style'
 import {Navigation} from 'react-native-navigation'
 import Toast from '../../components/Toast'
@@ -10,7 +10,7 @@ import CustomWebView from '../../components/WebView'
 // 1:第一步 引用native包
 const notificationModules = NativeModules.RNNotification;
 const jscEventEmit = new NativeEventEmitter(notificationModules);
-
+const customEventEmit = (Platform.OS === 'ios') ? jscEventEmit : DeviceEventEmitter;
 
 class WbView extends Base {
     constructor(props) {
@@ -29,15 +29,22 @@ class WbView extends Base {
       // });
 
       // android
-      DeviceEventEmitter.addListener('rntest',function(info){
-        // alert('rntest' + info)
-        Navigation.startSingleScreenApp({screen: {screen: 'lt.login'}});
-      });
+      // DeviceEventEmitter.addListener('rntest',function(info){
+      //   // alert('rntest' + info)
+      //   Navigation.startSingleScreenApp({screen: {screen: 'lt.login'}});
+      // });
 
+      customEventEmit.addListener('rntest',function(info){
+        _this.props.navigation.navigate('ProductDetails');
+      });
     }
 
     componentDidMount() {
 
+    }
+
+    componentWillUnmount() {
+      customEventEmit.removeListeners(1);
     }
 
     render() {
